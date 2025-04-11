@@ -1,103 +1,167 @@
-import Image from "next/image";
+"use client";
+
+import Link from "next/link";
+import { motion } from "motion/react";
+import {
+  BookOpen,
+  Zap,
+  Feather,
+  ScrollText,
+  Hand,
+  TimerIcon,
+  Layout,
+  Infinity,
+  ArrowRight,
+  Move,
+} from "lucide-react";
+import MainLayout from "@/components/layout/MainLayout";
+
+interface ExampleCard {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  href: string;
+  color: string;
+}
+
+const examples: ExampleCard[] = [
+  {
+    title: "Basic Animation",
+    description:
+      "Learn the fundamentals of Motion animations with simple examples",
+    icon: <Zap size={24} />,
+    href: "/examples/basic-animation",
+    color: "bg-blue-500",
+  },
+  {
+    title: "Spring Animation",
+    description: "Create natural, physics-based animations with springs",
+    icon: <Feather size={24} />,
+    href: "/examples/spring-animation",
+    color: "bg-green-500",
+  },
+  {
+    title: "Keyframes",
+    description: "Learn how to create complex animations with keyframes",
+    icon: <BookOpen size={24} />,
+    href: "/examples/keyframes",
+    color: "bg-amber-500",
+  },
+  {
+    title: "Scroll Animations",
+    description: "Trigger animations based on scroll position",
+    icon: <ScrollText size={24} />,
+    href: "/examples/scroll-animations",
+    color: "bg-purple-500",
+  },
+  {
+    title: "Gesture Animations",
+    description: "Create interactive animations with gesture controls",
+    icon: <Hand size={24} />,
+    href: "/examples/gesture-animations",
+    color: "bg-pink-500",
+  },
+  {
+    title: "Timeline",
+    description: "Orchestrate complex animation sequences with timelines",
+    icon: <TimerIcon size={24} />,
+    href: "/examples/timeline",
+    color: "bg-orange-500",
+  },
+  {
+    title: "Layout Animations",
+    description: "Animate layout changes with smooth transitions",
+    icon: <Layout size={24} />,
+    href: "/examples/layout-animations",
+    color: "bg-teal-500",
+  },
+  {
+    title: "Drag Animation",
+    description: "Create interactive draggable elements with precise control",
+    icon: <Move size={24} />,
+    href: "/examples/drag-animation",
+    color: "bg-cyan-500",
+  },
+  {
+    title: "Advanced Techniques",
+    description: "Explore advanced animation techniques and concepts",
+    icon: <Infinity size={24} />,
+    href: "/examples/advanced-techniques",
+    color: "bg-red-500",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <MainLayout>
+      <div className="max-w-5xl mx-auto">
+        <motion.div
+          className="mb-12 text-center"
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
+        >
+          <h1 className="text-4xl font-bold tracking-tight mb-2">
+            Motion Animation Library
+          </h1>
+          <p className="text-xl text-zinc-600 dark:text-zinc-400">
+            A modern animation library for React and JavaScript
+          </p>
+        </motion.div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          {examples.map((example, index) => (
+            <motion.div
+              key={example.href}
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{
+                delay: 0.1 * (index + 1),
+                duration: 0.5,
+                ease: [0.25, 1, 0.5, 1],
+              }}
+              whileHover={{
+                y: -5,
+                transition: { duration: 0.2 },
+              }}
+              className="relative group"
+            >
+              <Link href={example.href} className="block">
+                <div className="bg-white dark:bg-zinc-900 p-6 rounded-lg shadow-sm border border-zinc-200 dark:border-zinc-800 h-full flex flex-col">
+                  <div
+                    className={`${example.color} text-white p-3 rounded-lg w-12 h-12 flex items-center justify-center mb-4`}
+                  >
+                    {example.icon}
+                  </div>
+                  <h2 className="text-xl font-semibold mb-2">
+                    {example.title}
+                  </h2>
+                  <p className="text-zinc-600 dark:text-zinc-400 mb-4 flex-grow">
+                    {example.description}
+                  </p>
+
+                  <div className="flex items-center text-zinc-500 dark:text-zinc-400 text-sm font-medium group-hover:text-blue-500 transition-colors duration-200">
+                    <span>Explore examples</span>
+                    <motion.span
+                      initial={{ x: 0 }}
+                      animate={{ x: 0 }}
+                      className="inline-flex ml-2"
+                      whileHover={{ x: 3 }}
+                    >
+                      <ArrowRight size={16} />
+                    </motion.span>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </MainLayout>
   );
 }
