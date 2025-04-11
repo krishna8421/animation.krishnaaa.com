@@ -3,8 +3,8 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
-import ExampleLayout from "@/components/layout/ExampleLayout";
-import CodeBlock from "@/components/ui/CodeBlock";
+import ExampleLayout from "@/components/layout/example-layout";
+import CodeBlock from "@/components/ui/code-block";
 
 export default function BasicAnimation() {
   const [isAnimating, setIsAnimating] = useState(false);

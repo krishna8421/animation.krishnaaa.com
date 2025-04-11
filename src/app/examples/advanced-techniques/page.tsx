@@ -13,8 +13,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import ExampleLayout from "@/components/layout/ExampleLayout";
-import CodeBlock from "@/components/ui/CodeBlock";
+import ExampleLayout from "@/components/layout/example-layout";
+import CodeBlock from "@/components/ui/code-block";
 
 export default function AdvancedTechniques() {
   return (
@@ -66,7 +66,7 @@ export default function AdvancedTechniques() {
             Creating Reusable Animation Components
           </h2>
           <p className="text-zinc-600 dark:text-zinc-400 mb-6">
-            For complex applications, it's helpful to create reusable animation
+            For complex applications, it&apos;s helpful to create reusable animation
             components. Here are some examples of how to structure these
             components.
           </p>
@@ -437,7 +437,7 @@ const ParticleSystemExample = () => {
       setIsPlaying(true);
 
       controls
-        .start((i) => ({
+        .start(() => ({
           x: [0, Math.random() * 300 - 150],
           y: [0, Math.random() * 300 - 150],
           scale: [1, Math.random() * 0.5 + 0.5],
@@ -573,7 +573,7 @@ const AnimatedCounter = () => {
 
       <div className="text-sm text-zinc-600 dark:text-zinc-400 pt-4">
         <p>
-          This counter animates between values using Motion's{" "}
+          This counter animates between values using Motion&apos;s{" "}
           <code>animate</code> function directly.
         </p>
       </div>
@@ -633,7 +633,7 @@ const RevealText = () => {
 
       <div className="text-sm text-zinc-600 dark:text-zinc-400 pt-2">
         <p>
-          This component uses Motion's variants and staggered animations to
+          This component uses Motion&apos;s variants and staggered animations to
           reveal text word by word.
         </p>
       </div>

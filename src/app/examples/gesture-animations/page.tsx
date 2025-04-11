@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import {
   motion,
   useDragControls,
@@ -8,8 +8,8 @@ import {
   useTransform,
 } from "motion/react";
 import { Card, CardContent } from "@/components/ui/card";
-import ExampleLayout from "@/components/layout/ExampleLayout";
-import CodeBlock from "@/components/ui/CodeBlock";
+import ExampleLayout from "@/components/layout/example-layout";
+import CodeBlock from "@/components/ui/code-block";
 
 export default function GestureAnimations() {
   return (

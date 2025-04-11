@@ -3,8 +3,8 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
-import ExampleLayout from "@/components/layout/ExampleLayout";
-import CodeBlock from "@/components/ui/CodeBlock";
+import ExampleLayout from "@/components/layout/example-layout";
+import CodeBlock from "@/components/ui/code-block";
 
 export default function DragAnimation() {
   const [dragConstraints, setDragConstraints] = useState(true);
@@ -107,7 +107,7 @@ export default function DragAnimation() {
             <code className="mx-1 px-1 py-0.5 bg-zinc-100 dark:bg-zinc-800 rounded text-sm">
               drag
             </code>
-            prop with "x" or "y".
+            prop with &quot;x&quot; or &quot;y&quot;.
           </p>
 
           <div className="bg-zinc-100 dark:bg-zinc-800 p-8 rounded-lg flex flex-col justify-center items-center h-64 gap-8">

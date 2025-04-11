@@ -8,8 +8,8 @@ import {
   useSpring,
   useInView,
 } from "motion/react";
-import ExampleLayout from "@/components/layout/ExampleLayout";
-import CodeBlock from "@/components/ui/CodeBlock";
+import ExampleLayout from "@/components/layout/example-layout";
+import CodeBlock from "@/components/ui/code-block";
 
 export default function ScrollAnimations() {
   const containerRef = useRef<HTMLDivElement>(null);

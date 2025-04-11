@@ -1,7 +1,7 @@
 "use client";
 
 import { ReactNode } from "react";
-import Sidebar from "./Sidebar";
+import Sidebar from "./sidebar";
 import { motion } from "motion/react";
 
 interface MainLayoutProps {

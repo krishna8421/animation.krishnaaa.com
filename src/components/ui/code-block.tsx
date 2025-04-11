@@ -11,7 +11,7 @@ interface CodeBlockProps {
 
 export default function CodeBlock({
   code,
-  language = "tsx",
+  // language = "tsx",
   title,
   className,
 }: CodeBlockProps) {

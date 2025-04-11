@@ -5,8 +5,8 @@ import { motion, useAnimationControls } from "motion/react";
 import { Play, Pause, RefreshCw, FastForward, Rewind } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
-import ExampleLayout from "@/components/layout/ExampleLayout";
-import CodeBlock from "@/components/ui/CodeBlock";
+import ExampleLayout from "@/components/layout/example-layout";
+import CodeBlock from "@/components/ui/code-block";
 
 export default function TimelineAnimation() {
   return (
@@ -20,10 +20,10 @@ export default function TimelineAnimation() {
             Introduction to Timelines
           </h2>
           <p className="text-zinc-600 dark:text-zinc-400 mb-6">
-            Motion's timeline feature allows you to sequence and orchestrate
-            multiple animations with precise timing and control. Timelines are
-            perfect for creating complex, coordinated animations that would be
-            difficult to synchronize otherwise.
+            Motion&apos;s timeline feature allows you to sequence and
+            orchestrate multiple animations with precise timing and control.
+            Timelines are perfect for creating complex, coordinated animations
+            that would be difficult to synchronize otherwise.
           </p>
 
           <CodeBlock
@@ -300,7 +300,7 @@ const InteractiveTimelineExample = () => {
   const controls = useAnimationControls();
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
-  const animationRef = useRef<any>(null);
+  const animationRef = useRef<number | null>(null);
 
   const totalDuration = 5000; // 5 seconds
 
@@ -331,12 +331,12 @@ const InteractiveTimelineExample = () => {
   const pauseAnimation = () => {
     if (!isPlaying) return;
 
-    cancelAnimationFrame(animationRef.current);
+    cancelAnimationFrame(animationRef.current!);
     setIsPlaying(false);
   };
 
   const resetAnimation = () => {
-    cancelAnimationFrame(animationRef.current);
+    cancelAnimationFrame(animationRef.current!);
     setIsPlaying(false);
     setProgress(0);
     updateAnimationAtProgress(0);

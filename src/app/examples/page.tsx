@@ -5,14 +5,13 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import {
   Card,
-  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import { ExternalLink } from "lucide-react";
-import ExampleLayout from "@/components/layout/ExampleLayout";
+import ExampleLayout from "@/components/layout/example-layout";
 
 const examples = [
   {

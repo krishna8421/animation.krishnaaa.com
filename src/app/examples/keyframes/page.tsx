@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import { motion } from "motion/react";
 import { Play, Pause, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import ExampleLayout from "@/components/layout/ExampleLayout";
-import CodeBlock from "@/components/ui/CodeBlock";
+import ExampleLayout from "@/components/layout/example-layout";
+import CodeBlock from "@/components/ui/code-block";
 
 export default function KeyframesAnimation() {
   const [isPlaying, setIsPlaying] = useState(true);

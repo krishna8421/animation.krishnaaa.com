@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
-import ExampleLayout from "@/components/layout/ExampleLayout";
-import CodeBlock from "@/components/ui/CodeBlock";
+import ExampleLayout from "@/components/layout/example-layout";
+import CodeBlock from "@/components/ui/code-block";
 
 export default function SpringAnimation() {
   const [stiffness, setStiffness] = useState(100);
@@ -22,7 +22,7 @@ export default function SpringAnimation() {
         <div>
           <h2 className="text-xl font-semibold mb-4">Spring Physics</h2>
           <p className="text-zinc-600 dark:text-zinc-400 mb-6">
-            Spring animations provide natural, physics-based motion. They're
+            Spring animations provide natural, physics-based motion. They&apos;re
             defined by stiffness (spring strength), damping (resistance), and
             mass.
           </p>
